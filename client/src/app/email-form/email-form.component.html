@@ -1,0 +1,6 @@
+<div class="container">
+    <input type="text" [(ngModel)]="email" placeholder="Enter your email">
+    <button [disabled]="!isValidEmail()" (click)="sendEmail()">Send</button>
+    <div *ngIf="receivedTime">Received by server at: {{ receivedTime | date:'hh:mm:ss'}}</div>
+    <div class="error" *ngIf="errorMessage">Error: {{ errorMessage }}</div>
+</div>
